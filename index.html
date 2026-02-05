@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>For Aishwarya — Valentine in Motion 💖</title>
+ <meta name="description" content="Animated Valentine for Aishwarya: bigger countdown, poems, proposal, constellations, particles, ripples, draw mode, and floating photos loaded from /img/1.jpg..7.jpg (you add them).">
+ <link rel="preload" href="style.css" as="style">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- Layered canvases -->
+ <canvas id="bg" aria-hidden="true"></canvas>
+ <canvas id="fx" aria-hidden="true"></canvas>
+ <header class="topbar" role="banner">
+ <div class="brand">❤ Aishwarya Day</div>
+ <div class="controls">
+ <button id="themeBtn" class="chip" aria-label="Surprise theme">✨ Surprise</button>
+ <button id="drawBtn" class="chip" aria-label="Toggle draw mode">✍️ Draw: Off</button>
+ <button id="soundBtn" class="chip" aria-label="Toggle sound">🔈</button>
+ </div>
+ </header>
+ <main class="content" role="main">
+ <!-- HERO -->
+ <section class="hero" aria-label="Opening">
+ <h1 class="title">
+ <span class="spark">Happy Valentine’s Day</span>
+ <span class="name neon">Aishwarya</span>
+ </h1>
+ <p class="tag">Made with code and countless tiny hearts.</p>
+ <!-- Orbiting heart text -->
+ <div class="orbit-wrap" aria-hidden="true">
+ <svg viewBox="-120 -110 240 220" class="orbit">
+ <defs><path id="heartPath" d="M0,-40 C 35,-100 120,-35 0,60 C -120,-35 -35,-100 0,-40 Z" /></defs>
+ <text class="orbit-text"><textPath xlink:href="#heartPath" startOffset="0">✧ Aishwarya • You are loved • Forever and always •</textPath></text>
+ </svg>
+ </div>
+ <div class="hero-actions">
+ <button id="burstBtn" class="btn">💗 Heart Fireworks</button>
+ <button id="morphBtn" class="btn alt">💫 Morph Name</button>
+ <button id="poemBtn" class="btn ghost">💌 Poem (new each click)</button>
+ </div>
+ <!-- COUNTDOWN BADGE (bigger) -->
+ <div class="countdown-wrap" aria-live="polite">
+ <div class="countdown-chip"><span>Countdown to Feb 14:</span> <strong id="countdown">--</strong></div>
+ </div>
+ </section>
+ <!-- PARTICLE NAME SCENE -->
+ <section class="scene" aria-label="Name made of hearts">
+ <h2 class="scene-title">When all the little hearts agree…</h2>
+ <p class="scene-note">They form your name — and then dance away.</p>
+ <canvas id="particles" width="960" height="360" aria-label="Hearts forming name"></canvas>
+ <div class="scene-actions">
+ <button id="tightenBtn" class="chip">Tighten</button>
+ <button id="loosenBtn" class="chip">Loosen</button>
+ </div>
+ </section>
+ <!-- CONSTELLATION -->
+ <section class="scene" aria-label="Heart constellation">
+ <h2 class="scene-title">A sky of tiny promises</h2>
+ <p class="scene-note">Stars connect into little hearts whenever they’re close.</p>
+ <div class="constellation" id="constellation"></div>
+ </section>
+ <!-- HEARTFELT QUESTIONS / PROPOSAL -->
+ <section class="scene" aria-label="Heartfelt questions">
+ <h2 class="scene-title">A few questions from my heart</h2>
+ <div class="qa">
+ <div id="qText" class="qtext">Loading…</div>
+ <div class="qa-actions">
+ <button id="nextQ" class="btn">Next</button>
+ <button id="yesQ" class="btn alt" hidden>Yes</button>
+ <button id="laterQ" class="btn ghost" hidden>Maybe later</button>
+ </div>
+ </div>
+ </section>
+ <!-- COMPLIMENT SPINNER -->
+ <section class="scene" aria-label="Compliment spinner">
+ <h2 class="scene-title">A compliment for every glance</h2>
+ <div class="spinner">
+ <div class="slot" id="slot">You are my favorite coincidence.</div>
+ <button class="btn" id="spinBtn">🎰 Spin</button>
+ </div>
+ </section>
+ 
+ </section>
+
+    <!-- GALLERY: 10 images grid -->
+    <section class="scene" aria-label="Our gallery (10 photos)">
+      <h1 class="scene-title" style = "font-size : 30px; align:center;">Our Gallery </h1>
+ 
+      <div class="gallery10" id="gallery10" aria-live="polite"></div>
+    </section>
+ <section class="final" aria-label="Signature">
+ <p>With all my heart, <strong>Srinath</strong>.</p>
+  </section>
+ <footer class="footer">Made for <strong>Aishwarya</strong></footer>
+ </main>
+ <!-- Poem modal -->
+ <div id="modal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" hidden>
+ <div class="modal-content">
+ <button class="close" id="closeModal" aria-label="Close">×</button>
+ <h2 id="modalTitle">A tiny poem for you</h2>
+ <div id="poem" class="poem" aria-live="polite"></div>
+ <p class="hint">(Tap to close)</p>
+ </div>
+ </div>
+ <noscript>
+ <p class="noscript">This surprise needs JavaScript to animate the hearts. Please enable it to see the magic! 💗</p>
+ </noscript>
+ <script src="script.js" defer></script>
+</body>
+</html>
+
